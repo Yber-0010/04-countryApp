@@ -2,14 +2,18 @@
 <hr>
 <div class="row">
   <div class="col">
-    <!-- search box -->
+    <!-- search box (onValue)="searchByCapital($event)"-->
 
-    <input type="text" placeholder="Buscar por capital" class="form-control">
+    <shared-search-box
+      placeholder="buscar por capital..."
+      (onValue)="searchByCapital($event)"
+    ></shared-search-box>
 
   </div>
 </div>
 <div class="row">
   <div class="col">
-    tabla de resultados
+    <hr>
+    <countries-table [countries]="countries"></countries-table>
   </div>
 </div>
