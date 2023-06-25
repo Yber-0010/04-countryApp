@@ -7,6 +7,15 @@ import { Country } from '../../interfaces/country.interface';
   styleUrls: ['./country-table.component.css']
 })
 export class CountryTableComponent {
+
+  public modali?:number|boolean;
+
   @Input()
   public countries: Country[] = []
+  modal(i:number):void{
+    this.modali = i;
+  }
+  cerrarModal():void{
+    this.modali = false;
+  }
 }
