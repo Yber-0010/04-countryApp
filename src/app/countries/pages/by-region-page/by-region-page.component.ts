@@ -17,13 +17,12 @@ export class ByRegionPageComponent implements OnInit{
   public isLoading: boolean = false;
   public regions: Region[] = ['Africa','Americas','Asia','Europe','Oceania']
   public selecterRegion?: Region;
-  public initialValue: Region = '';
 
   constructor( private countriesService: CountriesService ){}
   ngOnInit(): void {
     this.countries = this.countriesService.cacheStore.byRegion.countries;
-    this.initialValue = this.countriesService.cacheStore.byRegion.region;
-    this.searchByRegion(this.initialValue);
+    this.selecterRegion = this.countriesService.cacheStore.byRegion.region;
+    this.searchByRegion(this.selecterRegion);
   }
 
   searchByRegion( region: Region ):void {
